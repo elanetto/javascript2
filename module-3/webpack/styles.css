@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: var(--lightblue);
+}
+
+:root {
+    --lightblue: #DDF9FF;
+    --darkblue: #507BBA;
+}
+
+h1, h2, h3 {
+    color: var(--darkblue);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}

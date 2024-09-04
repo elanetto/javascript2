@@ -1,0 +1,14 @@
+{
+  "name": "package.json",
+  "version": "1.0.0",
+  "description": "my package",
+  "main": "app.js",
+  "scripts": {
+    "test": "this is my package"
+  },
+  "author": "me",
+  "license": "MIT",
+  "dependencies": {
+    "webpack-cli": "^5.1.4"
+  }
+}
