@@ -1,33 +1,37 @@
-const path = require('path');
-const { title } = require('process');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const path = require("path");
 
 module.exports = {
-
-    entry: {
-        // the entry point for the bundle
-        bundle: path.resolve(__dirname, 'app.js')
+  entry: {
+    bundle: path.resolve(__dirname, "src/app.js"),
+  },
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "src/bundle.js",
+    assetModuleFilename: "pages/[name][ext]",
+  },
+  devServer: {
+    static: {
+      directory: path.resolve(__dirname, "dist"),
     },
-    output: {
-        // where the bundled file will be saved
-        path: path.resolve(__dirname, 'dist'),
-        filename: "bundle.js",
-    },
-    plugins: [
-        // plugins to use
-        new HtmlWebpackPlugin({
-            title: 'Webpack Example',
-            filename: 'index.html',
-            template: 'template.html',
-        })
-    ],
-    module: {
-        rules: [
-            // rules to follow when bundling files
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader']
-            }
-        ]
-    },
-
+    port: 3001,
+    open: true,
+    hot: true,
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: "Webpack Joke Website",
+      filename: "index.html",
+      template: "template.html",
+    }),
+  ],
+  module: {
+    rules: [
+        // rules to follow when bundling files
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }
+    ]
+},
 };
